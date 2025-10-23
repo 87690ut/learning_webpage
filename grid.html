@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            text-align: center;
+        }
+
+        .grid-container {
+
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            /* Creates three equal-width columns */
+            grid-template-rows: auto auto;
+            /* Rows will automatically size based on content */
+            gap: 10px;
+            /* Adds a 10px gap between grid items */
+        }
+
+
+
+
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            font-size: 1.5rem;
+            align-items: center;
+
+            background-color: lightblue;
+            padding: 20px;
+            border: 1px solid blue;
+        }
+
+        .grid1 {
+            grid-column-start: 4;
+            grid-column-end: 1;
+        }
+
+
+
+
+        .grid2 {
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+
+        .grid6 {
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+
+        .grid3 {
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+
+        .main {
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(auto auto);
+            grid-template-rows: auto auto;
+            margin-top: 50px;
+            padding: 2px;
+            height: 80vh;
+            gap: 20px;
+            border: 1px solid black;
+
+            grid-template-areas:
+                "first first first"
+                "second third fourth"
+                "second fifth fifth"
+                "sixth sixth sixth";
+        }
+
+        .gri {
+            display: flex;
+            background-color: red;
+
+
+            width: auto;
+
+            align-items: center;
+            justify-content: center;
+            padding: 2px;
+
+
+
+        }
+
+        .first {
+            grid-area: first;
+        }
+
+        .second {
+            grid-area: second;
+        }
+
+        .third {
+            grid-area: third;
+
+        }
+
+        .fourth {
+            grid-area: fourth;
+
+        }
+
+        .fifth {
+            grid-area: fifth;
+
+        }
+
+        .sixth {
+            grid-area: sixth;
+
+        }
+
+
+
+        .tr {
+            transform-style: preserve-3d;
+            margin-top: 80px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid black;
+            padding: 30px;
+            display: grid;
+            justify-content: space-around;
+            align-items: center;
+            gap: 60px;
+
+        }
+
+        .ani1 {
+
+            height: 150px;
+            width: 150px;
+            background: blue;
+
+        }
+
+        .ani1:hover {
+            transition: 1.5s ease-out;
+            transform: translateY(-50px);
+        }
+
+        .ani2 {
+            height: 150px;
+            width: 150px;
+            background: blue;
+        }
+
+        .ani2:hover {
+            transform: perspective(150px) scale(1.2) rotateY(30deg);
+            transition: 0.5s ease-out;
+        }
+
+
+
+        .ani3 {
+            height: 150px;
+            width: 150px;
+            background: blue;
+        }
+
+        .ani3:hover {
+            transition: 2s ease;
+
+            transform: perspective(180px) rotateY(360deg);
+        }
+
+        .ani4 {
+            height: 150px;
+            width: 150px;
+            background: blue;
+        }
+
+        .ani4:hover {
+            transform: translateX(30px);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="grid-container ">
+        <div class="grid-item grid1">Item 1</div>
+        <div class="grid-item grid2">Item 2</div>
+        <div class="grid-item grid3">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+        <div class="grid-item grid6">Item 6</div>
+    </div>
+
+
+    <div class="main ">
+        <div class="gri  first">Item 1</div>
+        <div class="gri  second">Item 2</div>
+        <div class="gri  third">Item 3</div>
+        <div class="gri fourth">Item 4</div>
+        <div class="gri fifth">Item 5</div>
+        <div class="gri sixth">Item 6</div>
+    </div>
+
+    <div class="tr">
+        <div class="ani1">The div for animation</div>
+        <div class="ani2">The div for animation</div>
+        <div class="ani3">The div for animation</div>
+        <div class="ani4">The div for animation</div>
+    </div>
+</body>
+
+</html>

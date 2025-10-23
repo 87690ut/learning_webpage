@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #b6cfe7;
+    }
+
+    .container {
+      padding: 32px;
+      background: #f4f8e9;
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(30, 147, 30, 0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+
+    input,
+    button {
+      padding: 10px 16px;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      outline: invert;
+    }
+
+    button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    #pa {
+      margin-top: 12px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #333;
+      height: 15px;
+    }
+
+    #main {
+      width: 100%;
+      height: auto;
+      border: 2px solid black;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    @media(max-width:600px) {
+      #main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        #box {
+          width: 40%;
+
+        }
+      }
+    }
+
+    #box {
+      width: 100px;
+      height: 100px;
+      border: 2px solid red;
+      margin: 10px;
+      box-shadow: 0px 0px 30px 2px black;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+
+
+    }
+  </style>
+
+  <script src="prac2.js"></script>
+
+
+  <div id="main">
+    <div id="box">Box 1</div>
+    <div id="box">Box 2</div>
+    <div id="box">Box 3</div>
+    <div id="box">Box 4</div>
+  </div>
+
+
+</body>
+
+</html>
