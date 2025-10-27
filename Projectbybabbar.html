@@ -88,7 +88,7 @@
             justify-content: center;
 
 
-            transition: 200ms linear all;
+            transition: 300ms linear all;
             cursor: pointer;
         }
 
@@ -141,12 +141,31 @@
             padding-top: 2px;
         }
 
+        .nom {
+            visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            gap: 50px;
+            align-items: center;
+            height: 100vh;
+            width: 55vw;
+            right: 0;
+            position: absolute;
+            top: 0;
+            z-index: 20;
+            font-size: larger;
+            font-weight: 600;
+            background-color: black;
+            color: white;
+            transition: ease all;
+        }
 
 
-        .im {
+        .imt {
             display: none;
-            width: 30px;
-            height: 30px;
+            width: 33px;
+            height: 33px;
 
         }
 
@@ -172,10 +191,15 @@
 
         }
 
+
+        .imt {
+            display: block;
+        }
+
         .images {
             display: block;
-            width: 30px;
-            height: 30px;
+            width: 70%;
+            height: 70%;
         }
 
         @media(max-width:685px) {
@@ -983,7 +1007,9 @@
 
             <div id="rigbut">Contact US</div>
 
-            <div class="im"><img class="images" src="3917762.png"></div>
+
+
+            <div class="imt"><img class="images" src="3917762.png"></div>
         </div>
     </nav>
 
@@ -1158,7 +1184,7 @@
 
         </div>
     </div>
-  <!--  This is in ghe branch feature/webpage-->
+    <!--  This is in ghe branch feature/webpage-->
 
     <div class="footer">
         <div class="f1">
@@ -1243,14 +1269,44 @@
         <div class="f2"> &#169 2025 - Go Ahead all right reserved.</div>
     </div>
 
+    <div class="nom">
+        <li>Home</li>
+        <li>Blog</li>
+        <li>Features</li>
+        <li>About Us</li>
+        <li>Contact Us</li>
+    </div>
+
+
     <script>
+
+        // Scroll to top when logo clicked
 
         document.getElementById("fdi").addEventListener("click", function () {
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
-            })
-        })
+            });
+        });
+
+        // Select the elements
+        const nom = document.querySelector('.nom');
+        const ibm = document.querySelector('.imt');
+
+        // Toggle the mobile menu when clicking the menu icon
+        ibm.addEventListener('click', function (event) {
+            event.stopPropagation(); // Prevents triggering the document click
+            nom.style.visibility = (nom.style.visibility === "visible") ? "hidden" : "visible";
+        });
+
+        // Close menu when clicking outside of it
+        document.addEventListener('click', function (event) {
+            if (!nom.contains(event.target) && !ibm.contains(event.target)) {
+                nom.style.visibility = "hidden";
+            }
+        });
+
+
 
     </script>
 
